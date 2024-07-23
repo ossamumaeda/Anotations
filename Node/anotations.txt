@@ -1,0 +1,150 @@
+Métodos:
+    GET
+    PUT
+    DELETE
+    POST
+
+    Usando a mesma rota, podemos acessar diferentes métodos e consequentemente diferentes funções.
+
+    Exemplo de diferenciação:
+    import http from 'node:http'; // Esmodules
+
+    const server = http.createServer((req,res) =>{
+        const {method, url} = req;
+
+        if(method ===  'GET' && url === '/teste') { return res.end('GET TESTE') }
+
+        if(method ===  'POST' && url === '/teste'){ return res.end('POST TESTE')}
+        
+        return res.end('Server ONLINE')
+    })
+
+----------------------------------------------------------
+
+Stateful -> Salva em memória                ==> Se parar o servidor perdemos todos os dados
+StateLess -> Salva em dispositivos externos ==> Os dados ficam a parte do servidor
+
+----------------------------------------------------------
+
+Cabeçalhos -> Metadados
+    .Informações adicionais enviadas nas requisições/respostas
+    .Existem cabeçalhos padrões e podemos criar um customizado
+
+    DOC: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
+----------------------------------------------------------
+Status codes
+    Informational responses     (100 – 199) -> Só trazem informações
+    Successful responses        (200 – 299) -> Sucesso
+    Redirection messages        (300 – 399) -> Redirecionamento de rotas (Tipo quando muda de rota)
+    Client error responses      (400 – 499) -> Erros de má requisições (Errou no jeito de requisitar)
+    Server error responses      (500 – 599) -> Erro interno 
+
+----------------------------------------------------------
+
+Streams -> INPUT E OUTPUT no node são TODOS STREAMS 
+    De forma geral, possibilita ler e escrever antes de acabar. 
+    Writable 
+    Readable
+    Transform
+    
+    EX: Readable: O Youtube, a ação de ver o video. O back está enviando aos poucos as infos do video para serem exibidas no front
+    EX: Writable: Em um programa de upload de planilhas, podemos processar os dados da planilha(Enquanto o upload é realizado), e ao mesmo tempo realizar as operações com os dados obtidos
+
+    Exemplo de código mostrando stream na prática
+
+    class StreamExample extends Readable{
+        index = 1
+        _read(){
+            const i = this.index++
+            setTimeout(()=>{
+                if(i>100){
+                    this.push(null)
+                }else{
+                    const buf = Buffer.from(String(i))
+                    this.push(buf)
+                }
+            },100)
+        }   
+    }   
+    new StreamExample().pipe(process.stdout) --> Vai ficar printando do 1 até 100 no terminal
+
+    class StreamWrite extends Writable{
+        _write(chunk,encoding,callback){
+            console.log(Number(chunk.toString()) * 7);
+            callback()
+        }
+    }
+    new StreamRead().pipe(new StreamWrite())
+
+
+    class StreamTransform extends Transform{
+        _transform(chunk,encoding,callback){
+            const transformed = Number(chunk.toString()) * -1
+
+            callback(null, Buffer.from(String(transformed)))
+        }
+    }
+    new StreamRead()
+        .pipe(new StreamTransform())    
+        .pipe(new StreamWrite())
+
+----------------------------------------------------------
+
+Visto que toda requisição e resposta do node são streams, podemos enviar streams diretamente para o back e vice versa.
+
+Um exemplo disso é:
+
+    // Arquivo server.js
+    class StreamTransform extends Transform{
+        _transform(chunk,encoding,callback){
+            const transformed = Number(chunk.toString()) * -1
+            console.log(transformed)
+            callback(null, Buffer.from(String(transformed)))
+        }
+    }
+
+    const server = http.createServer((req,res) =>{
+
+        return req 
+            .pipe(new StreamTransform())
+            .pipe(res)
+        
+    })
+
+    server.listen(3333)
+
+    //Arquivo que simula uma requisicao
+    class StreamRead extends Readable{
+        index = 1
+        _read(){
+            const i = this.index++
+            setTimeout(()=>{
+                if(i>100){
+                    this.push(null)
+                }else{
+                    const buf = Buffer.from(String(i))
+                    this.push(buf)
+                }
+            },50)
+        }
+    }
+
+    fetch('http://localhost:3333',{
+        method:'POST',
+        body: new StreamRead(),
+        duplex: 'half'
+    })
+
+----------------------------------------------------------
+
+Caso necessário, da pra usar o await e async para "obter" por inteiro uma stream, por exemplo:
+    const buff = []
+    for await (const chunk of req){
+        buff.push(chunk)
+    }
+    const fullStream = Buffer.concat(buff).toString()
+
+----------------------------------------------------------
+Buffers são espaços alocados na memoria (Mais baixo nivel) 
+    Guarda as informações em binario
