@@ -147,4 +147,27 @@ Caso necessário, da pra usar o await e async para "obter" por inteiro uma strea
 
 ----------------------------------------------------------
 Buffers são espaços alocados na memoria (Mais baixo nivel) 
+    Mais performatico
     Guarda as informações em binario
+
+    const b = Buffer.from("Hello") --> Transforma a string em buffer
+
+    const c = b.toString() --> Transforma em string
+
+----------------------------------------------------------
+Conceito de middleware
+    Interceptador -> 
+
+----------------------------------------------------------
+'node:fs/promise' -> Biblioteca de leitura e escrita em arquivos 
+fs.writeFile('nome_arquivo','Infomacao_salva').
+
+----------------------------------------------------------
+Query parameters: URL STATEFUL -> Filtros, paginação, não obrigatorios /?id=1
+Route parameters: Identificação de recuso -> localhost:3000/1
+Request Body(HTTPS):  
+----------------------------------------------------------
+REGEX
+Usado para validar strings
+
+----------------------------------------------------------
