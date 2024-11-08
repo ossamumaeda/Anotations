@@ -1,0 +1,10 @@
+Como funcionam streams de fato?
+Como ler streams de outras funções?
+Como ler um arquivo de texto usando streams?
+Como realizar a lógica dos chunks, para que sejam sempre lidos e retornados no tamanho e formato correto?
+
+
+--------------------------------
+YIELD
+GENERATORS
+CONSUME ON DEMAND

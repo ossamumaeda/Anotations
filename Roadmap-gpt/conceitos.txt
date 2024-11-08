@@ -1,0 +1,41 @@
+Entenda profundamente os fundamentos do Node.js: Muita gente aprende a usar frameworks como Express, mas esquece a base. Pega pesado com os módulos nativos de Node.js, como fs (File System), http, e events. Explore streams, buffers, e trabalhe em problemas de concorrência e assincronia. Conheça os detalhes do event loop e como ele impacta o desempenho. Esse conhecimento te transforma em um dev diferenciado.
+
+Arquitetura back-end e padrões mais aplicáveis ao Node.js: Invista um tempo estudando princípios de Clean Architecture e Domain-Driven Design (DDD), mas focando em aplicá-los com a simplicidade que o Node.js favorece. Nada de injetar complicação! Aprenda a construir APIs RESTful e GraphQL de forma otimizada e teste arquitetura de microservices, se for do seu interesse.
+
+React: aprofunde-se na complexidade do front-end moderno: Abandone a superfície e vá fundo nas complexidades como gerenciamento de estado em escala (Redux, Zustand, ou até Recoil), performance (React.memo, useMemo, useCallback), e renderização (Server Side Rendering e Static Generation). Teste hooks avançados e entenda as nuances de Suspense e Concurrent Mode. Crie componentes performáticos e bem planejados.
+
+
+Conceitos Gerais e Fundamentos (Aplicáveis a qualquer tecnologia)
+Arquitetura e Padrões de Projeto
+
+1.Domain-Driven Design (DDD): Estruturar o código com foco no domínio do negócio.
+Padrões de Projeto (Design Patterns): Singleton, Factory, Repository, Adapter, etc.
+Boas Práticas de Arquitetura: MVC, Clean Architecture, SOLID, separação de responsabilidades.
+Injeção de Dependência e Testabilidade: Estruturar dependências para melhorar a modularidade e facilidade de teste.
+Controle de Concorrência e Assincronia
+
+2.Programação Assíncrona: Promises, async/await (JavaScript), e outros paradigmas de assincronia em diferentes linguagens.
+Event Loop e Concorrência: Entender o event loop e como gerenciar processos concorrentes em sistemas orientados a eventos.
+Autenticação e Autorização
+
+3.Autenticação JWT: Padrão de autenticação independente da linguagem.
+Autorização Baseada em Papéis (RBAC): Controle de acesso e permissões baseadas em papéis.
+Boas Práticas de API
+
+4.APIs RESTful: Práticas de versionamento, documentação, status HTTP, etc.
+GraphQL (Opcional): Conceitos de GraphQL para construção de APIs mais flexíveis.
+Segurança e Validação de Dados: Validação de entrada e medidas para evitar ataques como SQL Injection, XSS, e CSRF.
+Banco de Dados e ORMs
+
+5.Modelagem de Dados e Relacionamentos: Entendimento de bancos de dados relacionais e NoSQL.
+Migrations e Seeders: Estrutura de banco de dados replicável, independentemente da tecnologia.
+Manipulação de Dados e SQL Avançado: Queries complexas, JOINs, índices, otimização de consultas.
+Testes e Qualidade de Código
+
+6.Testes Unitários, de Integração e E2E: Estrutura de teste independente da linguagem (foco em lógica).
+Cobertura de Testes: Práticas para melhorar e avaliar cobertura de código.
+Refatoração e Manutenção: Manter o código limpo e organizável com boas práticas de refatoração.
+DevOps e Deploy
+
+7.Conceitos de CI/CD: Conceitos e práticas para automação de deploys e testes.
+Containerização e Orquestração (Docker e Kubernetes): Estruturar ambientes replicáveis e escaláveis.

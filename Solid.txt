@@ -1,0 +1,63 @@
+Camadas de abstração
+Tentar visualizar o código com as diferentes camadas e diferentes possibilidades de entra/saida de dados
+Por exemplo, o controller de criação do usuário:
+
+export async function registerController(request: FastifyRequest, reply: FastifyReply) {
+    // Camada especifica de uma requisição HTTP
+    const registerBodySchema = z.object({
+        name: z.string(),
+        email: z.string().email(),
+        password: z.string().min(6)
+    })
+    const { email, name, password } = registerBodySchema.parse(request.body)
+
+    // Camada comum a todo cadastro, independente se for uma requisição HTTP ou não, sempre será necessário chamar essa função
+    await prisma.user.create({
+        data: {
+            name,
+            email,
+            password_hash: password
+        }
+    })
+
+    // Camada especifica de uma requisição HTTP
+    return reply.status(201).send()
+}
+
+Repository pattern
+	Desacopla a regra de negócios da camada de persistência no banco de dados
+	Permite que o banco de dados seja facilmente trocado sem afetar o sistema como um todo
+
+
+SOLID
+D - Dependency inversion
+	Inverter a ordem de como a dependencia chega nesse caso de uso
+	Ao invés da classe instanciar as dependencias, ela irá receber as dependencias como parametro
+	. O arquivo que precisar do caso de uso, é quem deve enviar a dependencia
+
+SRC
+	http
+		controllers
+			.Possuem as regras de negócio e são eles quem chamam as dependencias, como métodos de banco de dados
+		routes
+			.Possui todas as rotas da aplicação
+	repositories
+		prisma: Possui todas as classes referentes as operações e modelos do banco dados, como PrismaUsersRepository, que possui as função de criação e busca de emails dos usuarios
+		.Possui as declarações de interface de cada repositorio, utilizadas nos use Cases
+	use-cases
+		funções genericas que podem ser chamadas de quaisquer lugares no código, são a implementação de fato das casos de uso, como cadastro de usuario
+
+Factory pattern
+	Avulso de regra de negócios
+	Engloba a declaração das dependencias
+	Facilita a troca
+	Permite mais flexibilidade nos controllers
+
+Ordem comum para a criação de uma nova funcionalidade
+
+Criação do use case
+Criação do repository (interface)
+Criação do teste
+Criação controller
+
+TDD - Test Driven Development  

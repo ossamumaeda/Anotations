@@ -1,0 +1,14 @@
+Tipos de teste:
+	.Unitario: Unidade da aplicação 
+	.Integração: Comunicação entre duas ou mais unidades
+	.e2e - End to end: Simulam como um usuário iria utilizar nossa aplicação
+
+Pirâmide de testes:
+	- Base são os testes unitários
+	- Alguns testes de integração
+	- Menor quantidade de testes e2e
+		-> Afeta a performance de execução dos testes, aumentando tempo de execução
+
+Frameworks:
+	- Vitest
+	- Jest

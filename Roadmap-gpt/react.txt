@@ -1,0 +1,90 @@
+React (Front-end)
+Fundamentos do React
+
+1.JSX e Componentes: Estrutura básica de componentes e sintaxe JSX.
+Props e Estado (useState): Controle de dados e estrutura dos componentes.
+useEffect: Controle de ciclo de vida e efeitos colaterais.
+Componentização e Boas Práticas
+
+2.Componentes Funcionais vs Class Components: Entenda as diferenças e quando usar.
+Atomic Design: Aborde componentes reutilizáveis e modulares.
+Custom Hooks: Crie hooks para abstrair lógica repetitiva e tornar o código mais limpo.
+Gerenciamento de Estado
+
+3.Context API e useReducer: Alternativa leve para o Redux.
+Redux / Zustand: Aprenda a manipular dados globalmente e a escalonar o estado.
+Bibliotecas Avançadas: Redux-Toolkit, RTK Query, ou MobX para gerenciamento de estados complexos.
+Rotas e Navegação
+
+4.React Router: Configuração de rotas e roteamento dinâmico.
+Autenticação de Rotas: Proteção de rotas com base em autenticação.
+Performance e Otimização
+
+5.React.memo, useMemo e useCallback: Evitar renders desnecessários.
+Code Splitting e Lazy Loading: Separação do código para carregamento otimizado.
+SSR e SSG (Next.js): Renderização no servidor e geração de páginas estáticas.
+Integração com APIs e Tempo Real
+
+6.Requisições HTTP (Axios, Fetch): Conecte-se ao back-end e consuma dados.
+WebSocket com React: Criação de recursos em tempo real.
+GraphQL: Alternativa a REST; manipule dados complexos.
+Testes no Front-End
+
+7.Testes Unitários e de Snapshot: Jest para cobertura e consistência.
+Testes de Integração: React Testing Library para testar comportamento de componentes.
+Testes E2E: Cypress ou Playwright para simular a experiência completa do usuário.
+Design e UI
+
+8.Tailwind CSS: Otimize componentes e estilos com uma biblioteca moderna.
+Design System: Estruture componentes reutilizáveis e consistentes.
+Responsividade e Acessibilidade: Garanta uma experiência universal.
+
+
+React: Tópicos para Foco Avançado
+Gerenciamento Avançado de Estado
+
+1.Redux com RTK Query ou Zustand: Use Redux-Toolkit ou Zustand para gerenciar estados complexos, como sincronização de dados em tempo real ou caching em componentes.
+Gerenciamento de Estado Assíncrono: Trabalhe com estados que dependem de dados dinâmicos, como estados complexos e sincronizados com WebSockets, simulando um front-end em tempo real.
+Otimização e Performance no React
+
+2.Memorização e Re-Renders: Explore React.memo, useMemo, e useCallback para evitar renders desnecessários. Treine aplicar essas técnicas em um projeto grande.
+Code Splitting e Lazy Loading: Otimize carregamentos iniciais e divida o código para melhorar o desempenho da aplicação, especialmente em aplicações complexas.
+Renderização Server-Side com Next.js
+
+3.SSR e SSG: Aplique renderização no servidor e geração de páginas estáticas em uma aplicação com Next.js para otimizar a performance e SEO.
+API Routes com Next.js: Faça chamadas serverless com API Routes, permitindo processar dados em tempo real direto do back-end para o front-end em tempo recorde.
+Testes Avançados em React
+
+4.Testes de Integração e E2E: Use React Testing Library e Cypress para realizar testes avançados, garantindo que todos os componentes e fluxos da aplicação funcionem corretamente.
+Cobertura de Testes e Refatoração: Crie uma suíte de testes que cubra o máximo possível de cenários da aplicação e garanta que o código se mantenha confiável.
+Design System e UI Reutilizável
+
+5.Atomic Design e Storybook: Estruture componentes reutilizáveis com Atomic Design e documente a interface com Storybook, facilitando o reuso e a padronização dos componentes.
+Acessibilidade e Responsividade: Crie uma experiência acessível e responsiva, dominando ferramentas de acessibilidade e práticas de CSS com Tailwind.
+
+
+Componentização e Estrutura especificas do React
+
+1.JSX e Sintaxe Específica do React: Domínio de JSX e sintaxe React.
+Hooks do React: useState, useEffect, useReducer, useContext, etc.
+Custom Hooks: Criar hooks personalizados e específicos para abstrair lógica no React.
+State Management com Ferramentas Específicas
+
+2.Redux, Redux-Toolkit, e Zustand: Bibliotecas de gerenciamento de estado para React.
+RTK Query e Context API: Manipulação de dados e estados complexos, específico para React.
+Performance e Otimização de Renderização
+
+3.React.memo, useMemo, e useCallback: Técnicas de memoização específicas para melhorar a performance no React.
+Code Splitting e Lazy Loading no React: Separação do código e carregamento de componentes pesados sob demanda.
+Testes no React
+
+4.React Testing Library: Ferramenta para testes de componentes no React.
+Cypress para E2E em React: Teste ponta a ponta, útil para garantir a experiência completa do usuário.
+Next.js e Ferramentas Avançadas do React
+
+5.SSR e SSG com Next.js: Renderização no servidor e geração de páginas estáticas.
+API Routes no Next.js: Rotas específicas para back-end no Next.js, permitindo processamento direto no front-end.
+Design e UI com Ferramentas e Conceitos de CSS
+
+6.Tailwind CSS e Atomic Design: Abordagens para otimizar estilos e criar um design system com React.
+Responsividade e Acessibilidade em React: Ferramentas e práticas de acessibilidade e responsividade.

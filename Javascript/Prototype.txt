@@ -1,0 +1,43 @@
+const zombie = {
+    eat(){
+        return 'Brain' 
+    },
+    move(){
+        return 'Walk'
+    },
+    force:'weak'
+}
+
+const runner = Object.create(zombie, {
+    move: {
+        value: function(){
+            return 'Run'
+        },
+        writable: false,
+        configurable: true,
+        enumerable: true
+    },
+    force:{
+        value:'medium',
+        writable: true,
+        configurable: true,
+        enumerable: true
+    },
+    sourcer:{
+        value:'Heart',
+        writable: false,
+        configurable: true,
+        enumerable: true
+    }
+})
+
+console.log(zombie)
+console.log(runner.move())
+console.log(runner.force)
+console.log("Change:")
+runner.force = 'I can change the force'
+console.log(runner.force)
+console.log(runner.sourcer)
+console.log("Trying to write in the unwritable")
+runner.sourcer = 'Legs'
+console.log(runner.sourcer)

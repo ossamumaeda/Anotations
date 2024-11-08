@@ -1,0 +1,1 @@
+Maneira de manter o contexto entre as requisições

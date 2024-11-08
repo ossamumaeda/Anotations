@@ -1,0 +1,88 @@
+Node.js (Back-end)
+Fundamentos do Node.js
+
+1.Módulos e Core APIs: fs, path, http, events.
+Event Loop e Assincronia: Entenda como o Node lida com concorrência usando o event loop.
+Promises e async/await: Conceitos básicos e avançados para código assíncrono.
+Construção de APIs
+
+2.Express.js: Construa APIs RESTful simples e depois avance para um CRUD completo.
+Autenticação e Autorização: JWT e cookies para autenticação segura.
+Middlewares: Controle de fluxo e modularidade usando middlewares.
+Arquitetura e Estrutura de Projetos
+
+3.Padrão MVC e Clean Architecture: Estrutura de controllers, services e repositórios.
+Separação de responsabilidades: Prática em organizar código escalável.
+Injeção de dependência e SOLID: Construa módulos flexíveis e reutilizáveis.
+Banco de Dados
+
+4.SQL (PostgreSQL/MySQL) ou NoSQL (MongoDB): Escolha um e aprenda consultas básicas e avançadas.
+ORMs (Sequelize, TypeORM ou Prisma): Integre banco de dados com Node.js.
+Migrations e Seeders: Estruture bancos de dados de forma organizada e reproduzível.
+Gerenciamento de Erros e Logs
+
+5.Tratamento de Exceções: Boas práticas de captura de erros e mensagens claras.
+Log de erros e auditoria: Winston ou libraries de log para monitorar o sistema.
+WebSockets e Tempo Real
+
+6.Socket.IO: Criação de funcionalidades em tempo real.
+Streaming de Dados e Concorrência: Use streams do Node.js para lidar com grandes volumes de dados.
+Testes e Qualidade
+
+7.Testes Unitários: Mocha, Jest ou Chai.
+Testes de Integração: Supertest para verificar o funcionamento de rotas.
+Cobertura de Testes: Avalie a cobertura do código e otimize-a.
+DevOps e Deploy
+
+8.Ambientes de Desenvolvimento, Teste e Produção: Separe configurações e práticas para cada um.
+Docker e Containers: Automatize seu ambiente e aprenda a orquestrar containers.
+Deploy: Configure um servidor (como DigitalOcean, AWS, ou Heroku) para rodar o projeto.
+
+
+Node.js: Tópicos para Foco Avançado
+Arquitetura Avançada com Node.js
+
+1.Domain-Driven Design (DDD): Estruture um projeto onde os domínios do negócio são refletidos no código, criando classes e serviços orientados ao domínio.
+Modularização e Microservices: Experimente dividir o sistema em módulos ou microserviços para lidar com diferentes partes do projeto. Microserviços em Node podem ser feitos com frameworks como Fastify ou usando filas de mensagens com RabbitMQ ou Kafka.
+WebSockets e Comunicação em Tempo Real
+
+2.Socket.IO em Profundidade: Desenvolva um recurso de comunicação em tempo real, como um jogo multiplayer ou um sistema de chat com notificações, usando WebSockets e controlando eventos.
+Game Loop: Para um jogo multiplayer (como o worms.io que você mencionou), você precisa implementar um game loop eficaz com sincronização em tempo real e otimizações de desempenho, garantindo uma experiência fluida.
+Streams e Manipulação de Dados
+
+3.Streams e Buffers: Trabalhe com streams para processar grandes volumes de dados em tempo real, como em aplicações de streaming de vídeo ou processamento de arquivos grandes.
+Concorrência: Aprenda a usar streams para otimizar o uso de memória e processamento, explorando Readable e Writable Streams e suas práticas.
+Segurança e Escalabilidade
+
+4.Autenticação e Autorização Avançadas: Explore autenticação em camadas, como JWT com Refresh Tokens, e controle de acessos baseado em papéis (RBAC).
+Escalabilidade e Load Balancing: Pratique deploy de uma API escalável em múltiplos servidores usando clusters e balanceamento de carga. Estude estratégias de caching com Redis para reduzir o tempo de resposta e aumentar a eficiência.
+DevOps para Node.js
+
+5.CI/CD Pipelines: Aprenda a configurar pipelines de CI/CD, testando e realizando deploys automáticos.
+Containerização e Orquestração: Desenvolva e faça deploy de um sistema em containers com Docker e explore Kubernetes para gerenciar a escalabilidade.
+
+
+Módulos e Core APIs especificos do Node.js
+
+1.APIs do Core do Node: fs, path, http, events.
+Trabalhando com Streams e Buffers: Manipulação de grandes quantidades de dados em tempo real, otimizado para Node.js.
+Express.js e APIs RESTful em Node
+
+2.Middlewares e Fluxo de Requisição: Prática específica do Express para manipular requisições.
+Controle de Rotas e Modularização no Express: Organização de rotas e controllers em um projeto Express.
+Ferramentas e Libraries Node
+
+3.Socket.IO: Biblioteca para comunicação em tempo real com WebSockets.
+Frameworks Alternativos: Hapi, Fastify ou Nest.js para estruturar APIs robustas e escaláveis.
+ORMs e Integração de Banco de Dados com Node
+
+4.Sequelize, Prisma, ou TypeORM: ORMs específicos para SQL e Node.js.
+Conexão com MongoDB usando Mongoose: Integração com bancos de dados NoSQL em Node.
+Segurança no Node
+
+5.Helmet, Bcrypt, e outras ferramentas: Bibliotecas de segurança específicas para Node.js.
+Proteção de rotas e Middlewares: Estruturar middleware no Express para autenticação e autorização.
+Performance e Otimização em Node.js
+
+6.Clusterização e Escalabilidade com PM2: Ferramentas para rodar múltiplos processos de Node.
+Caching e Load Balancing com Redis: Técnicas de cache e balanceamento de carga em aplicações Node.
